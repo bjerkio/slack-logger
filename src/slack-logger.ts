@@ -17,13 +17,17 @@ export const sendLogMessages = async (
     },
   };
 
-  const parsedJson = logSync
-    .entry(metadata, {
-      slack: {
-        channel: options.defaultChannel,
-        ...log,
-      },
-    })
-    .toJSON();
-  destination.write(JSON.stringify(parsedJson));
+  if (log.slack) {
+    const parsedJson = logSync
+      .entry(metadata, {
+        slack: {
+          channel: options.defaultChannel,
+          ...log.slack,
+        },
+      })
+      .toJSON();
+    destination.write(JSON.stringify(parsedJson));
+  } else {
+    destination.write(JSON.stringify(log));
+  }
 };
