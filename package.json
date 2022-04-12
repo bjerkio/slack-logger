@@ -26,7 +26,7 @@
     "dev": "tsnd --respawn src/main.ts",
     "lint": "eslint . --ext .ts,.tsx",
     "test": "jest --coverage src/**/*",
-    "build": "tsc && tsc -p tsconfig.cjs.json"
+    "build": "tsc"
   },
   "dependencies": {
     "@google-cloud/logging": "^9.8.2",
