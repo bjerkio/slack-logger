@@ -19,6 +19,9 @@
     "stackdriver",
     "cloud-functions"
   ],
+  "files": [
+    "dist"
+  ],
   "scripts": {
     "dev": "tsnd --respawn src/main.ts",
     "lint": "eslint . --ext .ts,.tsx",
