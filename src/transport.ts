@@ -1,10 +1,10 @@
 import { Writable } from 'stream';
-import build from 'pino-abstract-transport';
+import abstractTransport from 'pino-abstract-transport';
 import { sendLogMessages } from './slack-logger';
 import { Destination, Options } from './types';
 import { buildSafeSonicBoom } from './utils';
 
-export const createTransport = (opts: Options): Writable => {
+export const build = (opts: Options): Writable => {
   let destination: Destination;
 
   if (
@@ -21,7 +21,9 @@ export const createTransport = (opts: Options): Writable => {
     });
   }
 
-  return build(source => sendLogMessages(destination, source, opts));
+  return abstractTransport(source =>
+    sendLogMessages(destination, source, opts),
+  );
 };
 
-export default createTransport;
+export default build;

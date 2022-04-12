@@ -1,9 +1,6 @@
 {
   "name": "pino-gcl-slack-transport",
-  "main": "./dist/cjs/transport.js",
-  "module": "./dist/transport.js",
-  "source": "src/transport.ts",
-  "types": "./dist/index.d.ts",
+  "main": "./dist/transport.js",
   "prettier": "@cobraz/prettier",
   "eslintConfig": {
     "extends": "@bjerk/eslint-config",
