@@ -6,7 +6,7 @@ import { sendLogMessages } from './slack-logger';
 import { Options } from './types';
 import { buildSafeSonicBoom } from './utils';
 
-const build = async (opts: Options): Promise<Writable> => {
+const build = async (opts: Options = {}): Promise<Writable> => {
   let destination: SonicBoom;
 
   if (
