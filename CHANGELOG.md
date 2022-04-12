@@ -1,5 +1,17 @@
 # Changelog
 
+## [1.1.0](https://github.com/bjerkio/pino-gcl-slack-transport/compare/v1.0.2...v1.1.0) (2022-04-12)
+
+
+### Features
+
+* Add default options. No longer need to set empty object ([a66014f](https://github.com/bjerkio/pino-gcl-slack-transport/commit/a66014fdfd6d0e06ebd9aed03f249a1875a4ce26))
+
+
+### Bug Fixes
+
+* output issue ([df5fb36](https://github.com/bjerkio/pino-gcl-slack-transport/commit/df5fb361be846e1eb5dba9332626f7a4c0d46a46))
+
 ### [1.0.2](https://github.com/bjerkio/pino-gcl-slack-transport/compare/v1.0.1...v1.0.2) (2022-04-12)
 
 
