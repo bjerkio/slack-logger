@@ -1,0 +1,33 @@
+name: Release
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Use Node.js 16.x
+        uses: actions/setup-node@v3
+        with:
+          node-version: 16.x
+          registry-url: 'https://registry.npmjs.org'
+          cache: yarn
+      - run: yarn install
+      - run: yarn run build
+      - run: yarn test --passWithNoTests
+        env:
+          CI: true
+      - uses: codecov/codecov-action@v2
+      - uses: GoogleCloudPlatform/release-please-action@v3.1.3
+        id: release
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          release-type: node
+          package-name: pino-gcl-slack-transport
+      - if: ${{ steps.release.outputs.release_created }}
+        run: yarn publish
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
