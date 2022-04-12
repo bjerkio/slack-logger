@@ -30,7 +30,3 @@ export interface Options {
    */
   sync?: boolean;
 }
-
-export type Destination = {
-  write(string: string): boolean;
-}

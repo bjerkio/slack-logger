@@ -1,14 +1,15 @@
 import { Logging } from '@google-cloud/logging';
-import { Destination, Options } from './types';
+import SonicBoom from 'sonic-boom';
+import { Options } from './types';
 
 const logging = new Logging();
 const logSync = logging.logSync('slack');
 
 export const sendLogMessages = async (
-  destination: Destination,
+  destination: SonicBoom,
   log: Record<string, any>,
   options: Options,
-): Promise<void> => {
+): Promise<boolean> => {
   const metadata = {
     severity: 'NOTICE',
     'logging.googleapis.com/labels': { type: 'pino-gcl-slack-transport' },
@@ -25,9 +26,9 @@ export const sendLogMessages = async (
           ...log.slack,
         },
       })
-      .toJSON();
-    destination.write(JSON.stringify(parsedJson));
+      .toStructuredJSON();
+    return destination.write(JSON.stringify(parsedJson) + '\n');
   } else {
-    destination.write(JSON.stringify(log));
+    return destination.write(JSON.stringify(log) + '\n');
   }
 };

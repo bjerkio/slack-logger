@@ -1,17 +1,19 @@
+import { once } from 'events';
 import { Writable } from 'stream';
 import abstractTransport from 'pino-abstract-transport';
+import SonicBoom from 'sonic-boom';
 import { sendLogMessages } from './slack-logger';
-import { Destination, Options } from './types';
+import { Options } from './types';
 import { buildSafeSonicBoom } from './utils';
 
-export const build = (opts: Options): Writable => {
-  let destination: Destination;
+const build = async (opts: Options): Promise<Writable> => {
+  let destination: SonicBoom;
 
   if (
     typeof opts.destination === 'object' &&
     typeof opts.destination.write === 'function'
   ) {
-    destination = opts.destination as Destination;
+    destination = opts.destination as SonicBoom;
   } else {
     destination = buildSafeSonicBoom({
       dest: (opts.destination as string | number) || 1,
@@ -21,9 +23,25 @@ export const build = (opts: Options): Writable => {
     });
   }
 
-  return abstractTransport(source =>
-    sendLogMessages(destination, source, opts),
+  await once(destination, 'ready');
+
+  return abstractTransport(
+    async source => {
+      for await (const obj of source) {
+        const toDrain = !sendLogMessages(destination, obj, opts);
+
+        if (toDrain) {
+          await once(destination, 'drain');
+        }
+      }
+    },
+    {
+      async close() {
+        destination.end();
+        await once(destination, 'close');
+      },
+    },
   );
 };
 
-export default build;
+export = build;
