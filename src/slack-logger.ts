@@ -19,12 +19,14 @@ export const sendLogMessages = async (
   };
 
   if (log.slack) {
+    const { slack, ...rest } = log;
     const parsedJson = logSync
       .entry(metadata, {
         slack: {
           channel: options.defaultChannel,
-          ...log.slack,
+          ...slack,
         },
+        ...rest,
       })
       .toStructuredJSON();
     return destination.write(JSON.stringify(parsedJson) + '\n');
