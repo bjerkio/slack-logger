@@ -1,5 +1,12 @@
 # Changelog
 
+### [1.1.1](https://github.com/bjerkio/pino-gcl-slack-transport/compare/v1.1.0...v1.1.1) (2022-04-14)
+
+
+### Bug Fixes
+
+* Add rest of the log object ([7faa54c](https://github.com/bjerkio/pino-gcl-slack-transport/commit/7faa54c741969353ccf7fa7896082924ccc3fad5))
+
 ## [1.1.0](https://github.com/bjerkio/pino-gcl-slack-transport/compare/v1.0.2...v1.1.0) (2022-04-12)
 
 
