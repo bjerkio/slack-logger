@@ -11,7 +11,6 @@ export const sendLogMessages = async (
   options: Options,
 ): Promise<boolean> => {
   const metadata = {
-    severity: 'NOTICE',
     'logging.googleapis.com/labels': { type: 'pino-gcl-slack-transport' },
     'logging.googleapis.com/operation': {
       producer: 'github.com/bjerkio/google-cloud-logger-slack@v1',
@@ -19,18 +18,27 @@ export const sendLogMessages = async (
   };
 
   if (log.slack) {
+    // If this is already formatted for Google Cloud Logger, only append
+    // required labels.
+    if (log.severity && log.message) {
+      return destination.write(JSON.stringify({ ...log, ...metadata }) + '\n');
+    }
+
     const { slack, ...rest } = log;
     const parsedJson = logSync
-      .entry(metadata, {
-        slack: {
-          channel: options.defaultChannel,
-          ...slack,
+      .entry(
+        { ...metadata, severity: 'NOTICE' },
+        {
+          slack: {
+            channel: options.defaultChannel,
+            ...slack,
+          },
+          ...rest,
         },
-        ...rest,
-      })
+      )
       .toStructuredJSON();
     return destination.write(JSON.stringify(parsedJson) + '\n');
-  } else {
-    return destination.write(JSON.stringify(log) + '\n');
   }
+
+  return destination.write(JSON.stringify(log) + '\n');
 };
