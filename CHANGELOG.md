@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.2.0](https://github.com/bjerkio/pino-gcl-slack-transport/compare/v1.1.1...v1.2.0) (2022-05-14)
+
+
+### Features
+
+* add support for pino existing Google Cloud Logger transports ([4b8e6c7](https://github.com/bjerkio/pino-gcl-slack-transport/commit/4b8e6c7e6934a9302d26b7e4391307fc746eeb11))
+
 ### [1.1.1](https://github.com/bjerkio/pino-gcl-slack-transport/compare/v1.1.0...v1.1.1) (2022-04-14)
 
 
