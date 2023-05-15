@@ -35,7 +35,7 @@
     "sonic-boom": "^2.7.0"
   },
   "devDependencies": {
-    "@bjerk/eslint-config": "^2.0.1",
+    "@bjerk/eslint-config": "^4.0.0",
     "@tsconfig/node16": "^1.0.2",
     "@types/jest": "^29.0.0",
     "@types/node": "16",
