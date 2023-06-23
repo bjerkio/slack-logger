@@ -1,4 +1,4 @@
-import SonicBoom, { SonicBoomOpts } from 'sonic-boom';
+import SonicBoom, { type SonicBoomOpts } from 'sonic-boom';
 
 // eslint-disable-next-line @typescript-eslint/no-empty-function
 const noop: any = () => {};

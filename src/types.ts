@@ -1,4 +1,4 @@
-import { DestinationStream } from 'pino';
+import { type DestinationStream } from 'pino';
 
 export interface Options {
   /**

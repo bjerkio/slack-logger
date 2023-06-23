@@ -1,13 +1,13 @@
 import { Logging } from '@google-cloud/logging';
 import SonicBoom from 'sonic-boom';
-import { Options } from './types';
+import { type Options } from './types.js';
 
 const logging = new Logging();
 const logSync = logging.logSync('slack');
 
 export const sendLogMessages = async (
   destination: SonicBoom,
-  log: Record<string, any>,
+  log: Record<string, unknown>,
   options: Options,
 ): Promise<boolean> => {
   const metadata = {
@@ -17,10 +17,10 @@ export const sendLogMessages = async (
     },
   };
 
-  if (log.slack) {
+  if (log['slack']) {
     // If this is already formatted for Google Cloud Logger, only append
     // required labels.
-    if (log.severity && log.message) {
+    if (log['severity'] && log['message']) {
       return destination.write(JSON.stringify({ ...log, ...metadata }) + '\n');
     }
 

@@ -2,11 +2,11 @@ import { once } from 'events';
 import { Writable } from 'stream';
 import abstractTransport from 'pino-abstract-transport';
 import SonicBoom from 'sonic-boom';
-import { sendLogMessages } from './slack-logger';
-import { Options } from './types';
-import { buildSafeSonicBoom } from './utils';
+import { sendLogMessages } from './slack-logger.js';
+import { type Options } from './types.js';
+import { buildSafeSonicBoom } from './utils.js';
 
-const build = async (opts: Options = {}): Promise<Writable> => {
+export default async (opts: Options = {}): Promise<Writable> => {
   let destination: SonicBoom;
 
   if (
@@ -15,11 +15,12 @@ const build = async (opts: Options = {}): Promise<Writable> => {
   ) {
     destination = opts.destination as SonicBoom;
   } else {
+    const { append = true, mkdir = false, sync = false } = opts;
     destination = buildSafeSonicBoom({
       dest: (opts.destination as string | number) || 1,
-      append: opts.append,
-      mkdir: opts.mkdir,
-      sync: opts.sync, // by default sonic will be async
+      append,
+      mkdir,
+      sync, // by default sonic will be async
     });
   }
 
@@ -43,5 +44,3 @@ const build = async (opts: Options = {}): Promise<Writable> => {
     },
   );
 };
-
-export = build;
