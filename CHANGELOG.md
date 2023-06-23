@@ -1,5 +1,15 @@
 # Changelog
 
+## [1.2.1](https://github.com/bjerkio/pino-gcl-slack-transport/compare/v1.2.0...v1.2.1) (2023-06-23)
+
+
+### Bug Fixes
+
+* **deps:** update dependency @google-cloud/logging to v10 ([#15](https://github.com/bjerkio/pino-gcl-slack-transport/issues/15)) ([0fe9f92](https://github.com/bjerkio/pino-gcl-slack-transport/commit/0fe9f92c36e08311f2388d98cfea9b47006dd2cf))
+* **deps:** update dependency pino to v8 ([#16](https://github.com/bjerkio/pino-gcl-slack-transport/issues/16)) ([a83e9a7](https://github.com/bjerkio/pino-gcl-slack-transport/commit/a83e9a75a80106475a284338d8b29ec458520227))
+* **deps:** update dependency pino-abstract-transport to v1 ([#17](https://github.com/bjerkio/pino-gcl-slack-transport/issues/17)) ([0c739f4](https://github.com/bjerkio/pino-gcl-slack-transport/commit/0c739f43598eafd232a2f6da116fe2a7fa593d97))
+* **deps:** update dependency sonic-boom to v3 ([#18](https://github.com/bjerkio/pino-gcl-slack-transport/issues/18)) ([8cb4eb5](https://github.com/bjerkio/pino-gcl-slack-transport/commit/8cb4eb56bf69801100fc3b4c8c728e7faa22af5c))
+
 ## [1.2.0](https://github.com/bjerkio/pino-gcl-slack-transport/compare/v1.1.1...v1.2.0) (2022-05-14)
 
 
