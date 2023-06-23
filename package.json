@@ -32,7 +32,7 @@
     "@google-cloud/logging": "^9.8.2",
     "pino": "^8.0.0",
     "pino-abstract-transport": "^1.0.0",
-    "sonic-boom": "^2.7.0"
+    "sonic-boom": "^3.0.0"
   },
   "devDependencies": {
     "@bjerk/eslint-config": "^4.0.0",
