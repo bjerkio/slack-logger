@@ -29,7 +29,7 @@
     "build": "tsc"
   },
   "dependencies": {
-    "@google-cloud/logging": "^9.8.2",
+    "@google-cloud/logging": "^10.0.0",
     "pino": "^8.0.0",
     "pino-abstract-transport": "^1.0.0",
     "sonic-boom": "^2.7.0"
