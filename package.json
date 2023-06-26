@@ -1,6 +1,8 @@
 {
   "name": "pino-gcl-slack-transport",
   "version": "2.0.1",
+  "description": "Pino transport for google-cloud-logger-slack",
+  "repository": "github:bjerkio/pino-gcl-slack-transport",
   "license": "Apache-2.0",
   "type": "module",
   "files": [
