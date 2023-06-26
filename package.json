@@ -48,6 +48,6 @@
     }
   },
   "exports": "./dist/transport.js",
-  "packageManager": "pnpm@8.6.3",
+  "packageManager": "pnpm@8.6.5",
   "prettier": "@simenandre/prettier"
 }
