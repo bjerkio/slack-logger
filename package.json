@@ -43,12 +43,6 @@
     "stackdriver",
     "transport"
   ],
-  "eslintConfig": {
-    "extends": "@bjerk/eslint-config",
-    "rules": {
-      "import/no-default-export": "off"
-    }
-  },
   "exports": "./dist/transport.js",
   "packageManager": "pnpm@8.6.5",
   "prettier": "@simenandre/prettier"
