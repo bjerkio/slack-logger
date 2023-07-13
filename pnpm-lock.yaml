@@ -23,8 +23,8 @@ devDependencies:
     specifier: ^4.1.0
     version: 4.1.0(@typescript-eslint/eslint-plugin@5.61.0)(@typescript-eslint/parser@5.61.0)(eslint-config-prettier@8.8.0)(eslint-plugin-eslint-comments@3.2.0)(eslint-plugin-import@2.27.5)(eslint-plugin-prettier@4.2.1)(eslint-plugin-promise@6.1.1)(eslint-plugin-unicorn@47.0.0)(eslint@8.44.0)(prettier@2.8.8)
   '@simenandre/prettier':
-    specifier: 4.0.1
-    version: 4.0.1(eslint@8.44.0)(prettier@2.8.8)
+    specifier: 4.1.1
+    version: 4.1.1(eslint@8.44.0)(prettier@2.8.8)
   '@tsconfig/esm':
     specifier: ^1.0.3
     version: 1.0.3
@@ -536,10 +536,10 @@ packages:
     resolution: {integrity: sha512-Vvn3zZrhQZkkBE8LSuW3em98c0FwgO4nxzv6OdSxPKJIEKY2bGbHn+mhGIPerzI4twdxaP8/0+06HBpwf345Lw==}
     dev: false
 
-  /@simenandre/prettier@4.0.1(eslint@8.44.0)(prettier@2.8.8):
-    resolution: {integrity: sha512-7ys2sGGqVQ1rTtjOgbgOwLDSUNRw/PiaCAWv97dE1d2VZDFxGNvn1BIQqhJrYL3jZBKAKSLH7evkzL8G6QB3ew==}
+  /@simenandre/prettier@4.1.1(eslint@8.44.0)(prettier@2.8.8):
+    resolution: {integrity: sha512-+1xJlwtNm0xwafWZU4IAh+T7n/yxulfcfpZTRLVkyFSY6t9+dhSbtBVPOZJ/lt+bqLb1FV2+eecqgALUpApcyg==}
     peerDependencies:
-      prettier: ^2.8.8
+      prettier: ^2
     dependencies:
       prettier: 2.8.8
       prettier-plugin-package-perfection: 1.1.0(eslint@8.44.0)
