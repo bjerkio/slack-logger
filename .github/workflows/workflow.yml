@@ -27,4 +27,13 @@ jobs:
       - name: Build 🔨
         run: pnpm build
 
+      - name: Test 🔬
+        run: pnpm test
+
+      - name: Lint 🧹
+        run: pnpm lint
+
+      - name: Format 🎨
+        run: pnpm format
+
       - uses: codecov/codecov-action@v3

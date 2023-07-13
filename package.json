@@ -2,8 +2,8 @@
   "name": "pino-gcl-slack-transport",
   "version": "2.0.1",
   "description": "Pino transport for google-cloud-logger-slack",
-  "repository": "github:bjerkio/pino-gcl-slack-transport",
   "license": "Apache-2.0",
+  "repository": "github:bjerkio/pino-gcl-slack-transport",
   "type": "module",
   "files": [
     "dist"
@@ -13,7 +13,7 @@
     "format": "prettier --write .",
     "format:check": "prettier --check .",
     "lint": "eslint . --ext .ts,.tsx",
-    "test": "vitest"
+    "test": "vitest --passWithNoTests"
   },
   "dependencies": {
     "@google-cloud/logging": "^10.5.0",
