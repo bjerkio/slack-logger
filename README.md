@@ -12,16 +12,16 @@ pnpm install pino-gcl-slack-transport
 ```
 
 ```js
-import { pino } from 'pino'
+import { pino } from 'pino';
 
 const pino = pino({
   transport: {
     target: 'pino-gcl-slack-transport',
     options: {
-      defaultChannel: '<channel id>', 
-    }
-  }
-})
+      defaultChannel: '<channel id>',
+    },
+  },
+});
 ```
 
 See [types.ts](./src/types.ts) for the full list of options.
