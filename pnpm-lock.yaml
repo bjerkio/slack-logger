@@ -29,8 +29,8 @@ devDependencies:
     specifier: ^1.0.3
     version: 1.0.3
   '@tsconfig/node-lts':
-    specifier: ^18.12.2
-    version: 18.12.2
+    specifier: ^20.0.0
+    version: 20.1.0
   '@tsconfig/strictest':
     specifier: ^2.0.1
     version: 2.0.1
@@ -565,8 +565,8 @@ packages:
     deprecated: Use the tsconfig base for your runtime instead of general 'esm', e.g. 'node18'
     dev: true
 
-  /@tsconfig/node-lts@18.12.2:
-    resolution: {integrity: sha512-1zbWpsZkChnemJsRm+G2EyjuPueNPkjBEfp08ET1uCv0CUL/5AK1IZvFtEsw7ZyEqojIydye3mwt6k8isULj4A==}
+  /@tsconfig/node-lts@20.1.0:
+    resolution: {integrity: sha512-3w2D9MfGdqBL51pHB5nGFmGtXBn1gbO+n9xzwcGSvZPArtCn4tElk+6EeelLXispAeqv13GAgbzkgLNHtoxOCQ==}
     dev: true
 
   /@tsconfig/strictest@2.0.1:
